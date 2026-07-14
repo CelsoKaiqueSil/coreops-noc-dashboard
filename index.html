@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demonstração pública e sintética de uma dashboard operacional para NOC.">
+  <title>CoreOps NOC Dashboard · Demo pública</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand" aria-label="NOC Operations">
+      <span class="brand-mark">NO</span>
+      <span class="brand-mark brand-mark-accent">C</span>
+      <span class="brand-copy">OPERATIONS</span>
+    </div>
+
+    <button class="sidebar-toggle" id="sidebarToggle" type="button" title="Recolher menu" aria-label="Recolher menu">
+      <i data-lucide="panel-left-close"></i>
+      <span>Menu</span>
+    </button>
+
+    <nav class="navigation" aria-label="Navegação principal">
+      <p class="nav-label">Monitoramento</p>
+      <button class="nav-item is-active" type="button" data-view="overview">
+        <i data-lucide="layout-dashboard"></i><span>Visão geral</span>
+      </button>
+      <button class="nav-item" type="button" data-view="incidents">
+        <i data-lucide="siren"></i><span>Incidentes</span>
+      </button>
+      <button class="nav-item" type="button" data-view="units">
+        <i data-lucide="building-2"></i><span>Unidades</span>
+      </button>
+      <button class="nav-item" type="button" data-view="operators">
+        <i data-lucide="radio-tower"></i><span>Operadoras</span>
+      </button>
+      <button class="nav-item" type="button" data-view="wall">
+        <i data-lucide="monitor-up"></i><span>NOC Wall</span>
+      </button>
+
+      <p class="nav-label">Gestão</p>
+      <button class="nav-item" type="button" data-view="reports">
+        <i data-lucide="chart-no-axes-combined"></i><span>Relatórios</span>
+      </button>
+    </nav>
+
+    <div class="demo-notice">
+      <i data-lucide="shield-check"></i>
+      <span>Ambiente demonstrativo<br><strong>Dados sintéticos</strong></span>
+    </div>
+  </aside>
+
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="topbar-title">
+        <button class="mobile-menu" id="mobileMenu" type="button" aria-label="Abrir menu">
+          <i data-lucide="menu"></i>
+        </button>
+        <div>
+          <p class="eyebrow" id="pageEyebrow">MONITORAMENTO / TEMPO REAL</p>
+          <h1 id="pageTitle">Visão geral operacional</h1>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <div class="sync-status" title="Dataset carregado localmente">
+          <span class="status-dot"></span>
+          <div><strong>Tempo real</strong><small id="lastUpdated">Atualizado agora</small></div>
+        </div>
+        <button class="icon-button" id="themeToggle" type="button" title="Alternar tema" aria-label="Alternar tema">
+          <i data-lucide="moon"></i>
+        </button>
+        <div class="analyst-chip">
+          <span class="avatar">AD</span>
+          <div><small>Analista</small><strong>Analista Demo</strong></div>
+        </div>
+      </div>
+    </header>
+
+    <section class="view is-active" id="view-overview" data-title="Visão geral operacional" data-eyebrow="MONITORAMENTO / TEMPO REAL">
+      <div class="toolbar">
+        <label class="search-field">
+          <i data-lucide="search"></i>
+          <input id="globalSearch" type="search" placeholder="Buscar unidade, circuito, IP ou evento" autocomplete="off">
+        </label>
+        <div class="filter-group" aria-label="Filtros rápidos">
+          <button class="filter-chip is-active" type="button" data-filter="all">Todos <span id="filterAllCount">0</span></button>
+          <button class="filter-chip" type="button" data-filter="isolated">Isoladas <span id="filterIsolatedCount">0</span></button>
+          <button class="filter-chip" type="button" data-filter="sla">SLA vencido <span id="filterSlaCount">0</span></button>
+          <button class="filter-chip" type="button" data-filter="unassigned">Sem responsável <span id="filterUnassignedCount">0</span></button>
+        </div>
+        <label class="select-field">
+          <span>Regional</span>
+          <select id="regionalFilter"><option value="all">Todas</option></select>
+        </label>
+      </div>
+
+      <div class="kpi-grid" id="kpiGrid"></div>
+
+      <div class="operations-layout">
+        <section class="panel incident-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="section-kicker">FILA OPERACIONAL</p>
+              <h2>Links indisponíveis no momento</h2>
+              <p>Ordenação por criticidade, SLA e tempo de queda.</p>
+            </div>
+            <span class="count-badge" id="visibleCount">0 incidentes</span>
+          </div>
+          <div class="incident-list" id="incidentList" aria-live="polite"></div>
+        </section>
+
+        <aside class="detail-panel" id="detailPanel" aria-label="Detalhes do incidente"></aside>
+      </div>
+    </section>
+
+    <section class="view" id="view-incidents" data-title="Incidentes" data-eyebrow="OPERAÇÃO / FILA COMPLETA">
+      <div class="section-header">
+        <div><p class="section-kicker">INCIDENTES ATIVOS</p><h2>Fila completa de indisponibilidades</h2><p>Visualização densa para triagem e passagem de turno.</p></div>
+        <button class="button button-secondary" type="button" id="exportDemo"><i data-lucide="download"></i>Exportar demonstração</button>
+      </div>
+      <div class="table-panel">
+        <div class="table-toolbar">
+          <label class="search-field compact"><i data-lucide="search"></i><input id="incidentTableSearch" type="search" placeholder="Filtrar incidentes"></label>
+          <span class="muted">Clique em uma linha para abrir na visão geral</span>
+        </div>
+        <div class="table-wrap"><table><thead><tr><th>Prioridade</th><th>Unidade / evento</th><th>Operadora</th><th>Regional</th><th>Duração</th><th>Responsável</th><th>SLA</th></tr></thead><tbody id="incidentTableBody"></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-units" data-title="Unidades" data-eyebrow="INVENTÁRIO / SAÚDE OPERACIONAL">
+      <div class="section-header">
+        <div><p class="section-kicker">CATÁLOGO OPERACIONAL</p><h2>Unidades monitoradas</h2><p>Inventário sintético enriquecido com contexto de conectividade.</p></div>
+        <label class="search-field compact"><i data-lucide="search"></i><input id="unitSearch" type="search" placeholder="Buscar unidade ou cidade"></label>
+      </div>
+      <div class="unit-grid" id="unitGrid"></div>
+    </section>
+
+    <section class="view" id="view-operators" data-title="Operadoras" data-eyebrow="FORNECEDORES / DESEMPENHO">
+      <div class="section-header">
+        <div><p class="section-kicker">QUALIDADE POR FORNECEDOR</p><h2>Operadoras e impacto atual</h2><p>Cores consistentes em todas as visualizações.</p></div>
+      </div>
+      <div class="operator-layout">
+        <section class="panel"><div class="panel-heading"><div><h2>Links fora por operadora</h2><p>Participação nos incidentes ativos.</p></div></div><div class="bar-chart" id="operatorBars"></div></section>
+        <section class="panel"><div class="panel-heading"><div><h2>Resumo de desempenho</h2><p>Indicadores sintéticos dos últimos 30 dias.</p></div></div><div class="operator-cards" id="operatorCards"></div></section>
+      </div>
+    </section>
+
+    <section class="view" id="view-reports" data-title="Relatórios" data-eyebrow="GESTÃO / INDICADORES">
+      <div class="section-header">
+        <div><p class="section-kicker">DESEMPENHO MENSAL</p><h2>Indicadores operacionais</h2><p>Recorte demonstrativo dos últimos seis meses.</p></div>
+        <label class="select-field report-period"><span>Período</span><select><option>Julho / 2026</option><option>Junho / 2026</option></select></label>
+      </div>
+      <div class="report-kpis" id="reportKpis"></div>
+      <div class="report-grid">
+        <section class="panel"><div class="panel-heading"><div><h2>Chamados por operadora</h2><p>Escala proporcional ao maior volume.</p></div></div><div class="bar-chart" id="reportOperatorBars"></div></section>
+        <section class="panel"><div class="panel-heading"><div><h2>Evolução mensal</h2><p>Volume de incidentes registrados.</p></div></div><div class="column-chart" id="monthlyChart"></div></section>
+        <section class="panel"><div class="panel-heading"><div><h2>MTTR por operadora</h2><p>Meta operacional demonstrativa de 5h.</p></div></div><div class="bar-chart" id="mttrBars"></div></section>
+      </div>
+    </section>
+
+    <section class="view wall-view" id="view-wall" data-title="NOC Wall" data-eyebrow="TELA DE OPERAÇÃO / LEITURA À DISTÂNCIA">
+      <div class="wall-header">
+        <div><p class="section-kicker">NOC WALL</p><h2>Status da rede: <span id="wallStatus">Atenção</span></h2></div>
+        <div class="wall-clock"><strong id="wallClock">--:--:--</strong><small id="wallDate">--</small></div>
+      </div>
+      <div class="wall-kpis" id="wallKpis"></div>
+      <div class="wall-columns">
+        <section class="wall-board"><div class="wall-section-heading"><h3>Unidades com links fora</h3><span>Top 8 mais recentes</span></div><div id="wallIncidentList"></div></section>
+        <section class="wall-board"><div class="wall-section-heading"><h3>Unidades isoladas</h3><span>Impacto total</span></div><div id="wallIsolatedList"></div></section>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
