@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Demonstração pública e sintética de uma dashboard operacional para NOC.">
   <title>CoreOps NOC Dashboard · Demo pública</title>
+  <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+  <script src="data/processed/dashboard_data.js"></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -60,14 +62,17 @@
           <i data-lucide="menu"></i>
         </button>
         <div>
-          <p class="eyebrow" id="pageEyebrow">MONITORAMENTO / TEMPO REAL</p>
+          <p class="eyebrow" id="pageEyebrow">MONITORAMENTO / DEMONSTRAÇÃO</p>
           <h1 id="pageTitle">Visão geral operacional</h1>
         </div>
       </div>
       <div class="topbar-actions">
+        <a class="repository-link" href="https://github.com/CelsoKaiqueSil/coreops-noc-dashboard/blob/main/src/coreops_demo/pipeline.py" target="_blank" rel="noreferrer">
+          <i data-lucide="code-2"></i><span>Pipeline Python</span>
+        </a>
         <div class="sync-status" title="Dataset carregado localmente">
           <span class="status-dot"></span>
-          <div><strong>Tempo real</strong><small id="lastUpdated">Atualizado agora</small></div>
+          <div><strong>Pipeline ETL</strong><small id="lastUpdated">Carregando dataset</small></div>
         </div>
         <button class="icon-button" id="themeToggle" type="button" title="Alternar tema" aria-label="Alternar tema">
           <i data-lucide="moon"></i>
@@ -79,7 +84,7 @@
       </div>
     </header>
 
-    <section class="view is-active" id="view-overview" data-title="Visão geral operacional" data-eyebrow="MONITORAMENTO / TEMPO REAL">
+    <section class="view is-active" id="view-overview" data-title="Visão geral operacional" data-eyebrow="MONITORAMENTO / DEMONSTRAÇÃO">
       <div class="toolbar">
         <label class="search-field">
           <i data-lucide="search"></i>

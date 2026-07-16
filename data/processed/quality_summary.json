@@ -1,0 +1,10 @@
+{
+  "raw_events": 35,
+  "operational_events": 34,
+  "noise_discarded": 1,
+  "duplicates_removed": 1,
+  "host_interface_matches": 32,
+  "circuit_fallback_matches": 1,
+  "unmatched_events": 0,
+  "incidents_built": 21
+}

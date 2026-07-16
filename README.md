@@ -1,71 +1,99 @@
 # CoreOps NOC Dashboard
 
-Edição pública e demonstrativa de uma plataforma operacional para acompanhamento
-de indisponibilidades de telecomunicações. A experiência foi desenhada para ajudar
-analistas a identificar prioridades, assumir incidentes, registrar tratativas e
-acompanhar SLA, unidades isoladas e impacto por operadora.
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](pyproject.toml)
+[![Pandas](https://img.shields.io/badge/Pandas-ETL-150458?logo=pandas&logoColor=white)](src/coreops_demo/pipeline.py)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-modelo%20analítico-4169E1?logo=postgresql&logoColor=white)](sql/)
+[![Tests](https://img.shields.io/badge/testes-pytest-0A9EDC?logo=pytest&logoColor=white)](tests/)
+[![Data](https://img.shields.io/badge/dados-100%25%20sintéticos-14804A)](SECURITY.md)
 
-> **Privacidade:** todos os nomes, eventos, circuitos, operadores, endereços e
-> indicadores desta edição são sintéticos. O repositório não contém código de
-> implantação, credenciais, consultas internas, planilhas ou dados de produção.
+Portfólio de Dados e Business Intelligence que transforma eventos técnicos de
+monitoramento em incidentes enriquecidos, indicadores operacionais e uma dashboard
+voltada à tomada de decisão em um NOC.
 
-**Repositório:** <https://github.com/CelsoKaiqueSil/coreops-noc-dashboard>
+O repositório não é apenas uma interface: o dataset exibido pela dashboard é gerado
+por um pipeline reproduzível em **Python e Pandas**, com normalização, filtro de
+ruído, deduplicação, matching em camadas, cálculo de KPIs e artefatos auditáveis.
 
-## Demonstração
+> **Privacidade:** todos os nomes, circuitos, endereços IP, eventos, protocolos e
+> indicadores são fictícios. Não existem credenciais, consultas internas, planilhas
+> corporativas ou dados de produção neste repositório.
 
-Abra [`index.html`](index.html) diretamente no navegador. Não há etapa de build,
-backend ou dependência de banco de dados.
+## O que este projeto comprova
 
-Principais interações disponíveis:
+- ingestão e validação de múltiplas fontes CSV;
+- limpeza, normalização e deduplicação com Pandas;
+- enriquecimento por `host + interface` e fallback por circuito;
+- construção de incidentes por pareamento de `PROBLEM` e `RECOVERY`;
+- métricas de SLA, MTTR, disponibilidade e qualidade do matching;
+- modelo relacional, views analíticas e índices PostgreSQL;
+- geração automática do contrato JSON/JavaScript consumido pela dashboard;
+- relatório Excel semanal com backup antes da gravação;
+- testes unitários e validação contínua no GitHub Actions.
 
-- filtros por ação, operadora, regional e texto;
-- fila de incidentes organizada por criticidade;
-- painel de detalhes em quatro áreas: resumo, tratativa, histórico e evidências;
-- registro local de uma atualização de tratativa;
-- visão de unidades, operadoras, relatórios e NOC Wall;
-- alternância entre tema claro e escuro.
+## Fluxo de dados
 
-## Visão técnica
+```mermaid
+flowchart LR
+    A["Eventos sintéticos"] --> C["ETL Python/Pandas"]
+    B["Inventário sintético"] --> C
+    C --> D["Qualidade e matching"]
+    D --> E["Incidentes e KPIs"]
+    E --> F["CSV / JSON / JavaScript"]
+    E --> G["Relatório Excel"]
+    F --> H["Dashboard web"]
+```
 
-| Camada | Edição demonstrativa | Projeto operacional representado |
-| --- | --- | --- |
-| Interface | HTML, CSS e JavaScript | Dashboard web responsiva |
-| Dados | Dataset sintético no navegador | PostgreSQL e bases operacionais |
-| Monitoramento | Eventos simulados | Enriquecimento por ferramenta de monitoramento |
-| Estado | `localStorage` | Tratativas e histórico persistidos no backend |
-| Segurança | Sem integração externa | Controle de acesso por perfil |
+A explicação completa está em [Arquitetura](docs/ARCHITECTURE.md) e os campos estão
+documentados no [Dicionário de dados](docs/DATA_DICTIONARY.md).
 
-Consulte a [arquitetura](docs/ARCHITECTURE.md) e a
-[lista de verificação para publicação](docs/PUBLICATION_CHECKLIST.md). O passo a
-passo para o primeiro envio está em [publicação no GitHub e LinkedIn](docs/PUBLISHING.md).
+## Executar localmente
 
-## Decisões de produto
+```bash
+python -m venv .venv
+python -m pip install -e ".[dev]"
+python -m coreops_demo.pipeline
+pytest -q
+python -m coreops_demo.weekly_report
+python -m http.server 8000
+```
 
-- **Ação primeiro:** cada incidente mostra a próxima ação antes do detalhe técnico.
-- **Densidade controlada:** a fila permite varrer muitos casos sem perder contexto.
-- **Cores semânticas:** vermelho representa ruptura ou SLA vencido; amarelo indica
-  atenção; verde comunica estabilidade; azul identifica navegação e ação.
-- **Passagem de turno:** responsável, status e última atualização permanecem juntos.
-- **NOC Wall:** apenas métricas e filas úteis para leitura à distância.
+Depois, abra `http://localhost:8000`. Os arquivos gerados ficam em
+`data/processed/` e o relatório de demonstração em `output/`.
 
-## Estrutura
+## Camadas do repositório
 
 ```text
 .
-|-- index.html
-|-- styles.css
+|-- data/
+|   |-- raw/                 # eventos e inventário sintéticos
+|   `-- processed/           # artefatos reproduzíveis do ETL
+|-- src/coreops_demo/
+|   |-- pipeline.py          # ingestão, qualidade, matching e KPIs
+|   `-- weekly_report.py     # automação de relatório Excel
+|-- sql/                     # schema, índices e views PostgreSQL
+|-- tests/                   # testes de regressão e qualidade
+|-- docs/                    # arquitetura e dicionário de dados
+|-- index.html               # dashboard demonstrativa
 |-- app.js
-|-- README.md
-|-- SECURITY.md
-|-- linkedin-post.md
-`-- docs/
-    |-- ARCHITECTURE.md
-    `-- PUBLICATION_CHECKLIST.md
+`-- styles.css
 ```
 
-## Autoria e direitos
+## Dashboard demonstrativa
 
-Projeto de portfólio de **Celso Silveira**, apresentado por meio de uma implementação
-demonstrativa independente. Nenhuma licença de reutilização é concedida neste
-momento. A publicação de nomes, marcas ou materiais do ambiente corporativo depende
-de autorização do respectivo titular.
+A interface permite filtrar incidentes, acompanhar SLA, identificar unidades
+isoladas, analisar operadoras e consultar a visão de NOC Wall. Alterações de
+tratativa ficam somente no `localStorage` do navegador.
+
+Principais decisões de produto:
+
+- **ação primeiro:** a próxima ação aparece antes do detalhe técnico;
+- **densidade controlada:** leitura rápida de uma fila operacional extensa;
+- **cores semânticas:** criticidade, risco e estabilidade consistentes;
+- **passagem de turno:** responsável, status e histórico permanecem juntos;
+- **rastreabilidade:** o dataset informa quando e como foi gerado.
+
+## Segurança e autoria
+
+Consulte [SECURITY.md](SECURITY.md) antes de reutilizar qualquer parte. Projeto de
+portfólio de **Celso Kaique**, desenvolvido como demonstração independente de uma
+arquitetura de dados aplicada a operações.

@@ -1,0 +1,359 @@
+{
+  "metadata": {
+    "generatedAt": "2026-07-15T15:00:00+00:00",
+    "dataPolicy": "100% synthetic",
+    "pipeline": "Python + Pandas + CSV + PostgreSQL reference model",
+    "quality": {
+      "raw_events": 35,
+      "operational_events": 34,
+      "noise_discarded": 1,
+      "duplicates_removed": 1,
+      "host_interface_matches": 32,
+      "circuit_fallback_matches": 1,
+      "unmatched_events": 0,
+      "incidents_built": 21
+    }
+  },
+  "operatorMeta": {
+    "Nexa Fiber": {
+      "color": "#0b83a6",
+      "mttr": 80,
+      "monthly": 4,
+      "availability": 98.406
+    },
+    "Orbitel": {
+      "color": "#d67a00",
+      "mttr": 45,
+      "monthly": 4,
+      "availability": 97.252
+    },
+    "AlphaLink": {
+      "color": "#6d45c6",
+      "mttr": 0,
+      "monthly": 2,
+      "availability": 99.464
+    },
+    "Vertex Telecom": {
+      "color": "#1b8b57",
+      "mttr": 0,
+      "monthly": 1,
+      "availability": 99.757
+    }
+  },
+  "incidents": [
+    {
+      "id": "INC-1009",
+      "unit": "Unidade Vale Azul",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "regional": "Regional Sudeste D",
+      "operator": "Orbitel",
+      "circuit": "DEMO-RJ-017",
+      "ip": "198.51.100.71",
+      "technology": "IP dedicado",
+      "speed": "120 Mbps",
+      "startedAt": "2026-07-13T11:48:00+00:00",
+      "durationMinutes": 3072,
+      "priority": "critical",
+      "isolated": false,
+      "sla": "overdue",
+      "assignee": "Sem responsável",
+      "status": "Inicial",
+      "nextAction": "Atribuir responsável",
+      "event": "Health check state is dead - link unavailable",
+      "protocol": "",
+      "linksTotal": 2,
+      "linksDown": 1,
+      "history": [
+        {
+          "time": "13/07, 08:48",
+          "author": "Pipeline sintético",
+          "status": "Detectado",
+          "text": "Evento normalizado e enriquecido por host_interface."
+        }
+      ]
+    },
+    {
+      "id": "INC-1008",
+      "unit": "Centro Atlântico",
+      "city": "Recife",
+      "state": "PE",
+      "regional": "Regional Nordeste",
+      "operator": "Nexa Fiber",
+      "circuit": "DEMO-PE-021",
+      "ip": "203.0.113.61",
+      "technology": "SD-WAN",
+      "speed": "200 Mbps",
+      "startedAt": "2026-07-14T14:24:00+00:00",
+      "durationMinutes": 1476,
+      "priority": "critical",
+      "isolated": false,
+      "sla": "overdue",
+      "assignee": "Joana Reis",
+      "status": "Aguardando operadora",
+      "nextAction": "Cobrar previsão da operadora",
+      "event": "Health check state is dead - link unavailable",
+      "protocol": "NX-84110-DEMO",
+      "linksTotal": 2,
+      "linksDown": 1,
+      "history": [
+        {
+          "time": "14/07, 11:24",
+          "author": "Pipeline sintético",
+          "status": "Detectado",
+          "text": "Evento normalizado e enriquecido por host_interface."
+        }
+      ]
+    },
+    {
+      "id": "INC-1006",
+      "unit": "Unidade Veredas",
+      "city": "Goiânia",
+      "state": "GO",
+      "regional": "Regional Centro-Oeste",
+      "operator": "AlphaLink",
+      "circuit": "DEMO-GO-012",
+      "ip": "203.0.113.42",
+      "technology": "MPLS",
+      "speed": "80 Mbps",
+      "startedAt": "2026-07-14T21:00:00+00:00",
+      "durationMinutes": 1080,
+      "priority": "critical",
+      "isolated": true,
+      "sla": "overdue",
+      "assignee": "Rafael Lima",
+      "status": "Aguardando operadora",
+      "nextAction": "Cobrar previsão da operadora",
+      "event": "Health check state is dead - link unavailable",
+      "protocol": "AL-99218-DEMO",
+      "linksTotal": 2,
+      "linksDown": 2,
+      "history": [
+        {
+          "time": "14/07, 18:00",
+          "author": "Pipeline sintético",
+          "status": "Detectado",
+          "text": "Evento normalizado e enriquecido por host_interface."
+        }
+      ]
+    },
+    {
+      "id": "INC-1007",
+      "unit": "Unidade Veredas",
+      "city": "Goiânia",
+      "state": "GO",
+      "regional": "Regional Centro-Oeste",
+      "operator": "Nexa Fiber",
+      "circuit": "DEMO-GO-013",
+      "ip": "203.0.113.43",
+      "technology": "IP dedicado",
+      "speed": "120 Mbps",
+      "startedAt": "2026-07-15T09:00:00+00:00",
+      "durationMinutes": 360,
+      "priority": "critical",
+      "isolated": true,
+      "sla": "overdue",
+      "assignee": "Rafael Lima",
+      "status": "Aguardando operadora",
+      "nextAction": "Cobrar previsão da operadora",
+      "event": "Health check state is dead - link unavailable",
+      "protocol": "NX-99219-DEMO",
+      "linksTotal": 2,
+      "linksDown": 2,
+      "history": [
+        {
+          "time": "15/07, 06:00",
+          "author": "Pipeline sintético",
+          "status": "Detectado",
+          "text": "Evento normalizado e enriquecido por host_interface."
+        }
+      ]
+    },
+    {
+      "id": "INC-1005",
+      "unit": "Clínica Estação Central",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "regional": "Regional Sudeste C",
+      "operator": "Vertex Telecom",
+      "circuit": "DEMO-MG-003",
+      "ip": "198.51.100.33",
+      "technology": "IP dedicado",
+      "speed": "150 Mbps",
+      "startedAt": "2026-07-15T09:45:00+00:00",
+      "durationMinutes": 315,
+      "priority": "critical",
+      "isolated": false,
+      "sla": "overdue",
+      "assignee": "Sem responsável",
+      "status": "Inicial",
+      "nextAction": "Atribuir responsável",
+      "event": "Health check state is dead - link unavailable",
+      "protocol": "",
+      "linksTotal": 2,
+      "linksDown": 1,
+      "history": [
+        {
+          "time": "15/07, 06:45",
+          "author": "Pipeline sintético",
+          "status": "Detectado",
+          "text": "Evento normalizado e enriquecido por circuit_fallback."
+        }
+      ]
+    },
+    {
+      "id": "INC-1004",
+      "unit": "Laboratório Horizonte Sul",
+      "city": "Curitiba",
+      "state": "PR",
+      "regional": "Regional Sul",
+      "operator": "Orbitel",
+      "circuit": "DEMO-PR-008",
+      "ip": "198.51.100.18",
+      "technology": "SD-WAN",
+      "speed": "300 Mbps",
+      "startedAt": "2026-07-15T10:00:00+00:00",
+      "durationMinutes": 300,
+      "priority": "critical",
+      "isolated": false,
+      "sla": "overdue",
+      "assignee": "Marina Costa",
+      "status": "Em triagem",
+      "nextAction": "Validar impacto e abrir chamado",
+      "event": "Health check state is dead - link unavailable",
+      "protocol": "",
+      "linksTotal": 2,
+      "linksDown": 1,
+      "history": [
+        {
+          "time": "15/07, 07:00",
+          "author": "Pipeline sintético",
+          "status": "Detectado",
+          "text": "Evento normalizado e enriquecido por host_interface."
+        }
+      ]
+    },
+    {
+      "id": "INC-1002",
+      "unit": "Centro Prisma Paulista",
+      "city": "Campinas",
+      "state": "SP",
+      "regional": "Regional Sudeste B",
+      "operator": "Nexa Fiber",
+      "circuit": "DEMO-SP-014",
+      "ip": "192.0.2.24",
+      "technology": "MPLS",
+      "speed": "100 Mbps",
+      "startedAt": "2026-07-15T12:30:00+00:00",
+      "durationMinutes": 150,
+      "priority": "critical",
+      "isolated": true,
+      "sla": "ok",
+      "assignee": "Analista Demo",
+      "status": "Aguardando operadora",
+      "nextAction": "Cobrar previsão da operadora",
+      "event": "Health check state is dead - link unavailable",
+      "protocol": "NX-84721-DEMO",
+      "linksTotal": 2,
+      "linksDown": 2,
+      "history": [
+        {
+          "time": "15/07, 09:30",
+          "author": "Pipeline sintético",
+          "status": "Detectado",
+          "text": "Evento normalizado e enriquecido por host_interface."
+        }
+      ]
+    },
+    {
+      "id": "INC-1003",
+      "unit": "Centro Prisma Paulista",
+      "city": "Campinas",
+      "state": "SP",
+      "regional": "Regional Sudeste B",
+      "operator": "Orbitel",
+      "circuit": "DEMO-SP-015",
+      "ip": "192.0.2.25",
+      "technology": "IP dedicado",
+      "speed": "200 Mbps",
+      "startedAt": "2026-07-15T12:35:00+00:00",
+      "durationMinutes": 145,
+      "priority": "critical",
+      "isolated": true,
+      "sla": "ok",
+      "assignee": "Analista Demo",
+      "status": "Aguardando operadora",
+      "nextAction": "Cobrar previsão da operadora",
+      "event": "Health check state is dead - link unavailable",
+      "protocol": "NX-84722-DEMO",
+      "linksTotal": 2,
+      "linksDown": 2,
+      "history": [
+        {
+          "time": "15/07, 09:35",
+          "author": "Pipeline sintético",
+          "status": "Detectado",
+          "text": "Evento normalizado e enriquecido por host_interface."
+        }
+      ]
+    },
+    {
+      "id": "INC-1001",
+      "unit": "Unidade Aurora Norte",
+      "city": "São Paulo",
+      "state": "SP",
+      "regional": "Regional Sudeste A",
+      "operator": "AlphaLink",
+      "circuit": "DEMO-SP-001",
+      "ip": "192.0.2.11",
+      "technology": "IP dedicado",
+      "speed": "200 Mbps",
+      "startedAt": "2026-07-15T13:42:00+00:00",
+      "durationMinutes": 78,
+      "priority": "critical",
+      "isolated": false,
+      "sla": "ok",
+      "assignee": "Sem responsável",
+      "status": "Inicial",
+      "nextAction": "Atribuir responsável",
+      "event": "Health check state is dead - link unavailable",
+      "protocol": "",
+      "linksTotal": 2,
+      "linksDown": 1,
+      "history": [
+        {
+          "time": "15/07, 10:42",
+          "author": "Pipeline sintético",
+          "status": "Detectado",
+          "text": "Evento normalizado e enriquecido por host_interface."
+        }
+      ]
+    }
+  ],
+  "monthlyData": [
+    {
+      "month": "Fev",
+      "value": 2
+    },
+    {
+      "month": "Mar",
+      "value": 2
+    },
+    {
+      "month": "Abr",
+      "value": 2
+    },
+    {
+      "month": "Mai",
+      "value": 2
+    },
+    {
+      "month": "Jun",
+      "value": 3
+    },
+    {
+      "month": "Jul",
+      "value": 10
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+operator,incident_count,total_downtime_minutes,active_incidents,mttr_minutes,monitored_links,availability_pct
+Nexa Fiber,4,2066,3,80,3,98.406
+Orbitel,4,3562,3,45,3,97.252
+AlphaLink,2,1158,2,0,5,99.464
+Vertex Telecom,1,315,1,0,3,99.757

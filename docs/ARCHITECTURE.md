@@ -1,32 +1,49 @@
-# Demonstration architecture
+# Arquitetura da demonstração pública
 
-The public edition is intentionally frontend-only. It reproduces the operational
-workflow without exposing the production integration layer.
+Esta edição reproduz o fluxo técnico do CoreOps com dados totalmente sintéticos.
+Ela não acessa Zabbix, firewalls, planilhas corporativas ou bancos de produção.
 
 ```mermaid
 flowchart LR
-    A["Synthetic incident dataset"] --> B["Client-side state"]
-    B --> C["Operational overview"]
-    B --> D["Incident queue"]
-    B --> E["Units and operators"]
-    B --> F["NOC Wall"]
-    G["Browser localStorage"] --> B
-    B --> G
+    A["Eventos sintéticos de monitoramento"] --> B["Extração com Pandas"]
+    C["Inventário sintético de links"] --> B
+    B --> D["Filtro de ruído e deduplicação"]
+    D --> E["Normalização e matching"]
+    E --> F["Construção de incidentes"]
+    F --> G["KPIs: SLA, MTTR e disponibilidade"]
+    G --> H["CSV e JSON auditáveis"]
+    G --> I["Modelo SQL PostgreSQL"]
+    H --> J["Dataset JavaScript gerado"]
+    J --> K["Dashboard estática"]
+    H --> L["Relatório Excel semanal"]
 ```
 
-## Production concepts represented
+## Decisões de engenharia
 
-- Event enrichment and operational prioritization.
-- Incident ownership, treatment status, SLA, and activity history.
-- Unit isolation and multi-link impact.
-- Operator and regional aggregation.
-- A TV-oriented NOC Wall with a reduced information hierarchy.
+- **Normalização determinística:** remoção de acentos, espaços e pontuação para
+  criar chaves comparáveis de host, interface e circuito.
+- **Matching em camadas:** primeiro `host + interface`; quando a interface diverge,
+  o pipeline usa o identificador do circuito como fallback auditável.
+- **Deduplicação:** eventos equivalentes do mesmo host, interface, estado e minuto
+  recebem uma impressão digital e são consolidados.
+- **Pareamento de eventos:** cada `PROBLEM` é associado à recuperação subsequente;
+  eventos sem recuperação permanecem ativos na dashboard.
+- **Qualidade observável:** o pipeline exporta contagens de ruído descartado,
+  duplicidades removidas e método usado em cada match.
+- **Reprodutibilidade:** a data de referência é configurável para que testes e
+  artefatos gerados sejam determinísticos.
 
-## Deliberately excluded
+## Fronteira entre demonstração e produção
 
-- Authentication and role management.
-- PostgreSQL schema and queries.
-- Zabbix API integration and matching logic.
-- Deployment scripts and server addresses.
-- Real spreadsheets, contacts, incidents, and inventory.
+| Demonstração pública | Conceito operacional representado |
+| --- | --- |
+| CSV sintético | API de monitoramento e bases operacionais |
+| Pandas local | Rotinas de ingestão e enriquecimento |
+| Scripts SQL versionados | PostgreSQL e views analíticas |
+| Arquivos JSON/JS | API consumida pela dashboard |
+| Relatório Excel de exemplo | Automação semanal de relatórios |
+| Testes unitários | Validações de qualidade e regressão |
+
+Credenciais, endereços de servidores, consultas internas, nomes reais e código de
+implantação permanecem deliberadamente fora do repositório.
 

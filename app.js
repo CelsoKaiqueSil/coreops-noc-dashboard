@@ -269,6 +269,14 @@ const MONTHLY_DATA = [
   { month: "Jul", value: 68 }
 ];
 
+const PIPELINE_DATA = window.COREOPS_DEMO_DATA;
+if (PIPELINE_DATA?.incidents?.length) {
+  Object.keys(OPERATOR_META).forEach((key) => delete OPERATOR_META[key]);
+  Object.assign(OPERATOR_META, PIPELINE_DATA.operatorMeta || {});
+  INCIDENTS.splice(0, INCIDENTS.length, ...PIPELINE_DATA.incidents);
+  MONTHLY_DATA.splice(0, MONTHLY_DATA.length, ...(PIPELINE_DATA.monthlyData || []));
+}
+
 const memoryStorage = {};
 const persisted = safeJsonParse(storageGet("noc-demo-state"), {});
 const state = {
@@ -720,7 +728,8 @@ function updateClock() {
   const now = new Date();
   document.querySelector("#wallClock").textContent = new Intl.DateTimeFormat("pt-BR", { hour: "2-digit", minute: "2-digit", second: "2-digit" }).format(now);
   document.querySelector("#wallDate").textContent = new Intl.DateTimeFormat("pt-BR", { weekday: "short", day: "2-digit", month: "2-digit", year: "numeric" }).format(now);
-  document.querySelector("#lastUpdated").textContent = `Atualizado às ${new Intl.DateTimeFormat("pt-BR", { hour: "2-digit", minute: "2-digit" }).format(now)}`;
+  const generatedAt = PIPELINE_DATA?.metadata?.generatedAt ? new Date(PIPELINE_DATA.metadata.generatedAt) : now;
+  document.querySelector("#lastUpdated").textContent = `Dataset de ${new Intl.DateTimeFormat("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }).format(generatedAt)}`;
 }
 
 function applyTheme() {

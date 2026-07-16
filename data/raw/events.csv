@@ -1,0 +1,37 @@
+event_id,host_name,interface_name,circuit_hint,event_name,status,event_time,severity,assignee,protocol
+0001,HUB-AURORA,wan2,DEMO-SP-002,Health check state is dead - link unavailable,PROBLEM,2026-02-05T08:00:00-03:00,3,,
+0002,HUB-AURORA,wan2,DEMO-SP-002,Health check state is alive - link recovered,RECOVERY,2026-02-05T09:20:00-03:00,0,,
+0003,HUB-HORIZONTE,wan1,DEMO-PR-007,Health check state is dead - link unavailable,PROBLEM,2026-02-20T10:00:00-03:00,3,,
+0004,HUB-HORIZONTE,wan1,DEMO-PR-007,Health check state is alive - link recovered,RECOVERY,2026-02-20T12:00:00-03:00,0,,
+0005,HUB-ESTACAO,wan2,DEMO-MG-004,Health check state is dead - link unavailable,PROBLEM,2026-03-10T11:00:00-03:00,4,,
+0006,HUB-ESTACAO,wan2,DEMO-MG-004,Health check state is alive - link recovered,RECOVERY,2026-03-10T14:00:00-03:00,0,,
+0007,HUB-VALEAZUL,wan2,DEMO-RJ-018,Health check state is dead - link unavailable,PROBLEM,2026-03-22T08:30:00-03:00,3,,
+0008,HUB-VALEAZUL,wan2,DEMO-RJ-018,Health check state is alive - link recovered,RECOVERY,2026-03-22T09:25:00-03:00,0,,
+0009,HUB-VEREDAS,wan1,DEMO-GO-012,Health check state is dead - link unavailable,PROBLEM,2026-04-07T15:00:00-03:00,3,,
+0010,HUB-VEREDAS,wan1,DEMO-GO-012,Health check state is alive - link recovered,RECOVERY,2026-04-07T15:35:00-03:00,0,,
+0011,HUB-ATLANTICO,wan2,DEMO-PE-022,Health check state is dead - link unavailable,PROBLEM,2026-04-18T06:00:00-03:00,4,,
+0012,HUB-ATLANTICO,wan2,DEMO-PE-022,Health check state is alive - link recovered,RECOVERY,2026-04-18T10:00:00-03:00,0,,
+0013,HUB-PRISMA,wan2,DEMO-SP-015,Health check state is dead - link unavailable,PROBLEM,2026-05-05T10:00:00-03:00,3,,
+0014,HUB-PRISMA,wan2,DEMO-SP-015,Health check state is alive - link recovered,RECOVERY,2026-05-05T12:20:00-03:00,0,,
+0015,HUB-HORIZONTE,wan2,DEMO-PR-008,Health check state is dead - link unavailable,PROBLEM,2026-05-24T14:00:00-03:00,3,,
+0016,HUB-HORIZONTE,wan2,DEMO-PR-008,Health check state is alive - link recovered,RECOVERY,2026-05-24T15:30:00-03:00,0,,
+0017,HUB-AURORA,wan1,DEMO-SP-001,Health check state is dead - link unavailable,PROBLEM,2026-06-03T08:10:00-03:00,3,,
+0018,HUB-AURORA,wan1,DEMO-SP-001,Health check state is alive - link recovered,RECOVERY,2026-06-03T09:15:00-03:00,0,,
+0019,HUB-ESTACAO,wan1,DEMO-MG-003,Health check state is dead - link unavailable,PROBLEM,2026-06-11T04:00:00-03:00,4,,
+0020,HUB-ESTACAO,wan1,DEMO-MG-003,Health check state is alive - link recovered,RECOVERY,2026-06-11T09:00:00-03:00,0,,
+0021,HUB-VALEAZUL,wan1,DEMO-RJ-017,Health check state is dead - link unavailable,PROBLEM,2026-06-25T12:00:00-03:00,3,,
+0022,HUB-VALEAZUL,wan1,DEMO-RJ-017,Health check state is alive - link recovered,RECOVERY,2026-06-25T12:45:00-03:00,0,,
+0023,HUB-VEREDAS,wan2,DEMO-GO-013,Health check state is dead - link unavailable,PROBLEM,2026-07-10T13:00:00-03:00,3,,
+0024,HUB-VEREDAS,wan2,DEMO-GO-013,Health check state is alive - link recovered,RECOVERY,2026-07-10T14:20:00-03:00,0,,
+1001,HUB-AURORA,wan1,DEMO-SP-001,Health check state is dead - link unavailable,PROBLEM,2026-07-15T10:42:00-03:00,4,,
+1001-DUP,HUB-AURORA,wan1,DEMO-SP-001,Health check state is dead - link unavailable,PROBLEM,2026-07-15T10:42:30-03:00,4,,
+1002,HUB-PRISMA,wan1,DEMO-SP-014,Health check state is dead - link unavailable,PROBLEM,2026-07-15T09:30:00-03:00,5,Analista Demo,NX-84721-DEMO
+1003,HUB-PRISMA,wan2,DEMO-SP-015,Health check state is dead - link unavailable,PROBLEM,2026-07-15T09:35:00-03:00,5,Analista Demo,NX-84722-DEMO
+1004,HUB-HORIZONTE,wan2,DEMO-PR-008,Health check state is dead - link unavailable,PROBLEM,2026-07-15T07:00:00-03:00,4,Marina Costa,
+1005,HUB-ESTACAO,link-primary,DEMO-MG-003,Health check state is dead - link unavailable,PROBLEM,2026-07-15T06:45:00-03:00,4,,
+1006,HUB-VEREDAS,wan1,DEMO-GO-012,Health check state is dead - link unavailable,PROBLEM,2026-07-14T18:00:00-03:00,5,Rafael Lima,AL-99218-DEMO
+1007,HUB-VEREDAS,wan2,DEMO-GO-013,Health check state is dead - link unavailable,PROBLEM,2026-07-15T06:00:00-03:00,5,Rafael Lima,NX-99219-DEMO
+1008,HUB-ATLANTICO,wan1,DEMO-PE-021,Health check state is dead - link unavailable,PROBLEM,2026-07-14T11:24:00-03:00,5,Joana Reis,NX-84110-DEMO
+1009,HUB-VALEAZUL,wan1,DEMO-RJ-017,Health check state is dead - link unavailable,PROBLEM,2026-07-13T08:48:00-03:00,5,,
+NOISE-1,HUB-AURORA,wan1,DEMO-SP-001,Packet loss above warning threshold,PROBLEM,2026-07-15T11:00:00-03:00,2,,
+

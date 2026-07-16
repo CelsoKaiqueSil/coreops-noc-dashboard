@@ -3,14 +3,22 @@
 Thumbs.db
 .vscode/
 .idea/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
 node_modules/
 dist/
 coverage/
+output/
+tmp/
 *.log
 *.zip
 *.xlsx
 *.xls
 *.csv
+!data/raw/*.csv
+!data/processed/*.csv
 *.env
 *.env.*
 !.env.example
@@ -19,4 +27,3 @@ coverage/
 screenshots/private/
 exports/
 secrets/
-

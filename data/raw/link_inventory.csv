@@ -1,0 +1,16 @@
+host_name,interface_name,unit,city,state,regional,operator,circuit,ip,technology,speed_mbps
+HUB-AURORA,wan1,Unidade Aurora Norte,São Paulo,SP,Regional Sudeste A,AlphaLink,DEMO-SP-001,192.0.2.11,IP dedicado,200
+HUB-AURORA,wan2,Unidade Aurora Norte,São Paulo,SP,Regional Sudeste A,Vertex Telecom,DEMO-SP-002,192.0.2.12,SD-WAN,150
+HUB-PRISMA,wan1,Centro Prisma Paulista,Campinas,SP,Regional Sudeste B,Nexa Fiber,DEMO-SP-014,192.0.2.24,MPLS,100
+HUB-PRISMA,wan2,Centro Prisma Paulista,Campinas,SP,Regional Sudeste B,Orbitel,DEMO-SP-015,192.0.2.25,IP dedicado,200
+HUB-HORIZONTE,wan1,Laboratório Horizonte Sul,Curitiba,PR,Regional Sul,AlphaLink,DEMO-PR-007,198.51.100.17,IP dedicado,200
+HUB-HORIZONTE,wan2,Laboratório Horizonte Sul,Curitiba,PR,Regional Sul,Orbitel,DEMO-PR-008,198.51.100.18,SD-WAN,300
+HUB-ESTACAO,wan1,Clínica Estação Central,Belo Horizonte,MG,Regional Sudeste C,Vertex Telecom,DEMO-MG-003,198.51.100.33,IP dedicado,150
+HUB-ESTACAO,wan2,Clínica Estação Central,Belo Horizonte,MG,Regional Sudeste C,AlphaLink,DEMO-MG-004,198.51.100.34,MPLS,100
+HUB-VEREDAS,wan1,Unidade Veredas,Goiânia,GO,Regional Centro-Oeste,AlphaLink,DEMO-GO-012,203.0.113.42,MPLS,80
+HUB-VEREDAS,wan2,Unidade Veredas,Goiânia,GO,Regional Centro-Oeste,Nexa Fiber,DEMO-GO-013,203.0.113.43,IP dedicado,120
+HUB-ATLANTICO,wan1,Centro Atlântico,Recife,PE,Regional Nordeste,Nexa Fiber,DEMO-PE-021,203.0.113.61,SD-WAN,200
+HUB-ATLANTICO,wan2,Centro Atlântico,Recife,PE,Regional Nordeste,Vertex Telecom,DEMO-PE-022,203.0.113.62,IP dedicado,150
+HUB-VALEAZUL,wan1,Unidade Vale Azul,Rio de Janeiro,RJ,Regional Sudeste D,Orbitel,DEMO-RJ-017,198.51.100.71,IP dedicado,120
+HUB-VALEAZUL,wan2,Unidade Vale Azul,Rio de Janeiro,RJ,Regional Sudeste D,AlphaLink,DEMO-RJ-018,198.51.100.72,SD-WAN,200
+

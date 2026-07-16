@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coreops-noc-demo"
+version = "1.0.0"
+description = "Pipeline sintético de dados e dashboard para operações NOC."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "openpyxl>=3.1,<4",
+  "pandas>=2.2,<4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[project.scripts]
+coreops-demo = "coreops_demo.pipeline:main"
+coreops-weekly-report = "coreops_demo.weekly_report:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

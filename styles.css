@@ -306,6 +306,32 @@ body.sidebar-collapsed .app-shell {
   gap: 10px;
 }
 
+.repository-link {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 700;
+  gap: 7px;
+  padding: 9px 11px;
+  text-decoration: none;
+  transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.repository-link:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  transform: translateY(-1px);
+}
+
+.repository-link svg {
+  height: 16px;
+  width: 16px;
+}
+
 .sync-status {
   gap: 9px;
   min-width: 140px;
@@ -1698,4 +1724,3 @@ td small {
     grid-column: 2;
   }
 }
-

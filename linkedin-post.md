@@ -1,31 +1,33 @@
 # Texto sugerido para o LinkedIn
 
-Desenvolvi uma plataforma de apoio operacional para um NOC de telecomunicações,
-com foco em reduzir o tempo entre a detecção de uma indisponibilidade e a primeira
-ação do analista.
+Transformei um problema operacional de monitoramento em um projeto completo de
+Dados e Business Intelligence: o CoreOps NOC Dashboard.
 
-O projeto reúne, em uma única experiência:
+Para tornar o portfólio verificável e seguro, construí uma edição pública que não
+usa informações corporativas. O pipeline em Python/Pandas processa um conjunto de
+35 eventos e 14 links sintéticos, remove ruído e duplicidades, aplica matching em
+duas camadas e gera 21 incidentes auditáveis.
 
-- priorização de incidentes por criticidade, duração e SLA;
-- identificação de unidades isoladas e impacto por múltiplos links;
-- fluxo estruturado de tratativas, responsáveis e histórico;
-- visão executiva de MTTR, reincidência e desempenho por operadora;
-- NOC Wall otimizada para acompanhamento em TV;
-- enriquecimento de dados oriundos de monitoramento e bases operacionais.
+O projeto inclui:
 
-Além do desenvolvimento da interface, trabalhei na modelagem das regras de negócio,
-na qualidade dos dados, na integração com PostgreSQL e monitoramento, e na evolução
-da experiência com base no uso diário dos analistas.
+- ETL reproduzível com validação de schema e qualidade dos dados;
+- normalização, deduplicação e enriquecimento por host, interface e circuito;
+- modelo PostgreSQL com índices e views para SLA, MTTR e disponibilidade;
+- geração automática de CSV, JSON e relatório Excel semanal;
+- dashboard responsiva com fila operacional, unidades, operadoras e NOC Wall;
+- 4 testes automatizados em pytest e validação pelo GitHub Actions.
 
-Para apresentar o trabalho com segurança, publiquei uma edição demonstrativa com
-dados 100% sintéticos e sem qualquer credencial ou informação de cliente.
+O principal aprendizado foi conectar engenharia de dados, análise e contexto de
+negócio para transformar alertas técnicos em informações úteis para priorização e
+tomada de decisão.
 
-Repositório e demonstração do código:
+Repositório:
 https://github.com/CelsoKaiqueSil/coreops-noc-dashboard
 
-Tecnologias: Python, Flask, PostgreSQL, JavaScript, HTML, CSS, automação e integração
-com monitoramento.
+Tecnologias: Python, Pandas, PostgreSQL, SQL, pytest, GitHub Actions, HTML, CSS,
+JavaScript e Excel.
 
-#NOC #Telecom #Python #PostgreSQL #JavaScript #Dashboard #Observabilidade #SRE
+#Dados #Python #SQL #PostgreSQL #PowerBI #ETL #DataAnalytics #BusinessIntelligence
+#Portfolio #NOC
 
 > Cite marcas ou empresas somente quando houver autorização explícita.
