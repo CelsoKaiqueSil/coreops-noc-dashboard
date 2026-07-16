@@ -48,4 +48,3 @@ def test_weekly_report_contains_summary_incidents_and_kpis(tmp_path):
     report = build_weekly_report(artifacts.incidents, artifacts.provider_kpis, tmp_path / "weekly.xlsx")
     workbook = load_workbook(report, read_only=True)
     assert workbook.sheetnames == ["Resumo", "Incidentes", "KPIs por operadora"]
-

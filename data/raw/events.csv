@@ -34,4 +34,3 @@ event_id,host_name,interface_name,circuit_hint,event_name,status,event_time,seve
 1008,HUB-ATLANTICO,wan1,DEMO-PE-021,Health check state is dead - link unavailable,PROBLEM,2026-07-14T11:24:00-03:00,5,Joana Reis,NX-84110-DEMO
 1009,HUB-VALEAZUL,wan1,DEMO-RJ-017,Health check state is dead - link unavailable,PROBLEM,2026-07-13T08:48:00-03:00,5,,
 NOISE-1,HUB-AURORA,wan1,DEMO-SP-001,Packet loss above warning threshold,PROBLEM,2026-07-15T11:00:00-03:00,2,,
-

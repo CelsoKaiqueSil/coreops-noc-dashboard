@@ -52,4 +52,3 @@ CREATE INDEX IF NOT EXISTS idx_incidents_link_opened
 CREATE INDEX IF NOT EXISTS idx_incidents_active
     ON coreops_demo.incidents (opened_at DESC)
     WHERE closed_at IS NULL;
-

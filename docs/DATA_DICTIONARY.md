@@ -27,4 +27,3 @@ circuito, endereço IP reservado para documentação, tecnologia e velocidade.
 - `quality_summary.json`: auditoria do pipeline.
 - `dashboard_data.json`: contrato de dados legível por outras aplicações.
 - `dashboard_data.js`: mesmo contrato carregado diretamente pela demonstração web.
-

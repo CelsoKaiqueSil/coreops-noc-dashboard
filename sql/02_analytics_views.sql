@@ -49,7 +49,6 @@ FROM period AS p
 JOIN link_capacity AS c USING (operator_name)
 GROUP BY p.operator_name
 ORDER BY incident_count DESC;
-
 CREATE OR REPLACE VIEW coreops_demo.vw_data_quality AS
 SELECT
     match_method,
@@ -58,4 +57,3 @@ SELECT
 FROM coreops_demo.incidents
 GROUP BY match_method
 ORDER BY incident_count DESC;
-
