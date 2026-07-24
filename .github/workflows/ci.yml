@@ -15,6 +15,7 @@ jobs:
           cache: pip
       - run: python -m pip install -e ".[dev]"
       - run: python -m coreops_demo.pipeline
+      - run: python -m coreops_demo.analysis
       - run: pytest -q
-      - name: Confirm generated dashboard data is committed
-        run: git diff --exit-code -- data/processed
+      - name: Confirm generated data and analysis are committed
+        run: git diff --exit-code -- data/processed analysis

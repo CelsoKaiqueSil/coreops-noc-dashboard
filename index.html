@@ -47,6 +47,9 @@
       <button class="nav-item" type="button" data-view="reports">
         <i data-lucide="chart-no-axes-combined"></i><span>Relatórios</span>
       </button>
+      <button class="nav-item" type="button" data-view="automations">
+        <i data-lucide="workflow"></i><span>Automações</span>
+      </button>
     </nav>
 
     <div class="demo-notice">
@@ -163,6 +166,90 @@
         <section class="panel"><div class="panel-heading"><div><h2>Chamados por operadora</h2><p>Escala proporcional ao maior volume.</p></div></div><div class="bar-chart" id="reportOperatorBars"></div></section>
         <section class="panel"><div class="panel-heading"><div><h2>Evolução mensal</h2><p>Volume de incidentes registrados.</p></div></div><div class="column-chart" id="monthlyChart"></div></section>
         <section class="panel"><div class="panel-heading"><div><h2>MTTR por operadora</h2><p>Meta operacional demonstrativa de 5h.</p></div></div><div class="bar-chart" id="mttrBars"></div></section>
+      </div>
+    </section>
+
+    <section class="view" id="view-automations" data-title="Portfólio de automações" data-eyebrow="DADOS / PROCESSOS / INTEGRAÇÕES">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">ESTUDOS DE CASO</p>
+          <h2>Automações aplicadas ao trabalho</h2>
+          <p>Arquiteturas e resultados apresentados sem dados, credenciais ou código proprietário.</p>
+        </div>
+        <a class="button button-secondary" href="docs/AUTOMATIONS_PORTFOLIO.md" target="_blank" rel="noreferrer">
+          <i data-lucide="file-text"></i>Documentação completa
+        </a>
+      </div>
+
+      <div class="automation-grid">
+        <article class="automation-card">
+          <div class="automation-card-top">
+            <span class="automation-icon automation-icon-blue"><i data-lucide="activity"></i></span>
+            <span class="badge badge-info">API + ETL</span>
+          </div>
+          <p class="section-kicker">MONITORAMENTO</p>
+          <h3>Pipeline de relatórios Zabbix</h3>
+          <p>Coleta somente leitura, processamento em lotes, classificação de CPU, memória e tráfego, identificação de picos e geração de relatórios Excel auditáveis.</p>
+          <ul class="automation-list">
+            <li>Deduplicação por identificador de evento</li>
+            <li>Picos com data, hora e recorrência</li>
+            <li>Ausência de dados tratada sem inventar zeros</li>
+          </ul>
+          <div class="automation-stack"><span>Python</span><span>API</span><span>Pandas</span><span>Excel</span></div>
+        </article>
+
+        <article class="automation-card">
+          <div class="automation-card-top">
+            <span class="automation-icon automation-icon-green"><i data-lucide="gauge"></i></span>
+            <span class="badge badge-stable">BI + SLA</span>
+          </div>
+          <p class="section-kicker">ATENDIMENTO</p>
+          <h3>Service Desk Analytics</h3>
+          <p>Consolidação de chamados, backlog, SLA e tempos de atendimento com indicadores rastreáveis para reuniões e melhoria contínua.</p>
+          <ul class="automation-list">
+            <li>Abertos, resolvidos, encerrados e backlog</li>
+            <li>Média, mediana e percentil 90</li>
+            <li>Dashboard, resumo, tickets e metodologia</li>
+          </ul>
+          <div class="automation-stack"><span>Python</span><span>APIs</span><span>KPIs</span><span>Excel</span></div>
+        </article>
+
+        <article class="automation-card">
+          <div class="automation-card-top">
+            <span class="automation-icon automation-icon-purple"><i data-lucide="sheet"></i></span>
+            <span class="badge badge-neutral">PROCESSOS</span>
+          </div>
+          <p class="section-kicker">PLANILHAS</p>
+          <h3>FortiView para Excel e SharePoint</h3>
+          <p>Coleta agendada de tráfego, backup e atualização padronizada de planilhas, preservando fórmulas, estrutura e formatação.</p>
+          <ul class="automation-list">
+            <li>Normalização das unidades de tráfego</li>
+            <li>Backup antes de cada atualização</li>
+            <li>Agendamento e integração com SharePoint</li>
+          </ul>
+          <div class="automation-stack"><span>Python</span><span>Excel</span><span>PowerShell</span><span>Graph</span></div>
+        </article>
+
+        <article class="automation-card automation-card-featured">
+          <div class="automation-card-top">
+            <span class="automation-icon automation-icon-amber"><i data-lucide="network"></i></span>
+            <span class="badge badge-attention">PROJETO PRINCIPAL</span>
+          </div>
+          <p class="section-kicker">COREOPS</p>
+          <h3>NOC Dashboard e relatório semanal</h3>
+          <p>ETL, qualidade, matching, PostgreSQL, indicadores e dashboard reunidos em uma edição pública com dados totalmente sintéticos.</p>
+          <ul class="automation-list">
+            <li>Consolidação reduzida de horas para minutos</li>
+            <li>SLA, MTTR, disponibilidade e recorrência</li>
+            <li>Testes, documentação e rastreabilidade</li>
+          </ul>
+          <div class="automation-stack"><span>Python</span><span>SQL</span><span>PostgreSQL</span><span>BI</span></div>
+        </article>
+      </div>
+
+      <div class="portfolio-disclaimer">
+        <i data-lucide="shield-check"></i>
+        <div><strong>Portfólio seguro</strong><span>Os estudos de caso descrevem competências e resultados. Informações corporativas e implementações proprietárias não são publicadas.</span></div>
       </div>
     </section>
 

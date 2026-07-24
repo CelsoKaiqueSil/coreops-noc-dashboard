@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 440" role="img" aria-labelledby="title desc">
+<title id="title">Indisponibilidade acumulada por operadora (minutos)</title>
+<desc id="desc">Gráfico de barras gerado pelo estudo analítico do portfólio.</desc>
+<rect width="100%" height="100%" fill="#f7fafc" rx="18"/>
+<text x="190" y="38" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#122d4e">Indisponibilidade acumulada por operadora (minutos)</text>
+<text x="178" y="117.4" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#334155">Orbitel</text>
+<rect x="190" y="70.0" width="686.0" height="69.8" rx="6" fill="#1d67bd"/>
+<text x="884.0" y="117.4" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#122d4e">3.792</text>
+<text x="178" y="199.2" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#334155">Nexa Fiber</text>
+<rect x="190" y="151.8" width="373.8" height="69.8" rx="6" fill="#1d67bd"/>
+<text x="571.8" y="199.2" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#122d4e">2.066</text>
+<text x="178" y="280.9" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#334155">AlphaLink</text>
+<rect x="190" y="233.5" width="291.8" height="69.8" rx="6" fill="#1d67bd"/>
+<text x="489.8" y="280.9" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#122d4e">1.613</text>
+<text x="178" y="362.7" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#334155">Vertex Telecom</text>
+<rect x="190" y="315.2" width="169.1" height="69.8" rx="6" fill="#1d67bd"/>
+<text x="367.1" y="362.7" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#122d4e">935</text>
+<text x="190" y="420" font-family="Arial, sans-serif" font-size="13" fill="#64748b">Fonte: dados sintéticos gerados pelo pipeline CoreOps.</text>
+</svg>

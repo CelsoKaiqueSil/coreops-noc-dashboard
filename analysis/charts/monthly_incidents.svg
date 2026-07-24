@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" role="img" aria-labelledby="title desc">
+<title id="title">Tendência mensal de incidentes</title>
+<desc id="desc">Gráfico de linha com a contagem mensal de incidentes sintéticos.</desc>
+<rect width="100%" height="100%" fill="#f7fafc" rx="18"/>
+<text x="72" y="38" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#122d4e">Tendência mensal de incidentes</text>
+<line x1="72" y1="348" x2="878" y2="348" stroke="#94a3b8"/>
+<polyline points="72.0,292.4 233.2,292.4 394.4,292.4 555.6,292.4 716.8,264.6 878.0,70.0" fill="none" stroke="#00796b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="72.0" cy="292.4" r="7" fill="#ffffff" stroke="#00796b" stroke-width="4"/>
+<text x="72.0" y="278.4" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#122d4e">2</text>
+<text x="72.0" y="377" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#475569">2026-02</text>
+<circle cx="233.2" cy="292.4" r="7" fill="#ffffff" stroke="#00796b" stroke-width="4"/>
+<text x="233.2" y="278.4" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#122d4e">2</text>
+<text x="233.2" y="377" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#475569">2026-03</text>
+<circle cx="394.4" cy="292.4" r="7" fill="#ffffff" stroke="#00796b" stroke-width="4"/>
+<text x="394.4" y="278.4" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#122d4e">2</text>
+<text x="394.4" y="377" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#475569">2026-04</text>
+<circle cx="555.6" cy="292.4" r="7" fill="#ffffff" stroke="#00796b" stroke-width="4"/>
+<text x="555.6" y="278.4" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#122d4e">2</text>
+<text x="555.6" y="377" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#475569">2026-05</text>
+<circle cx="716.8" cy="264.6" r="7" fill="#ffffff" stroke="#00796b" stroke-width="4"/>
+<text x="716.8" y="250.6" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#122d4e">3</text>
+<text x="716.8" y="377" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#475569">2026-06</text>
+<circle cx="878.0" cy="70.0" r="7" fill="#ffffff" stroke="#00796b" stroke-width="4"/>
+<text x="878.0" y="56.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#122d4e">10</text>
+<text x="878.0" y="377" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#475569">2026-07</text>
+<text x="72" y="402" font-family="Arial, sans-serif" font-size="13" fill="#64748b">A série descreve a amostra sintética; não representa tendência de produção.</text>
+</svg>

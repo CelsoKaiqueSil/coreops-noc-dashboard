@@ -3,6 +3,7 @@ from pathlib import Path
 import pandas as pd
 from openpyxl import load_workbook
 
+from coreops_demo.analysis import build_analysis
 from coreops_demo.pipeline import (
     DEFAULT_AS_OF,
     deduplicate_events,
@@ -48,3 +49,19 @@ def test_weekly_report_contains_summary_incidents_and_kpis(tmp_path):
     report = build_weekly_report(artifacts.incidents, artifacts.provider_kpis, tmp_path / "weekly.xlsx")
     workbook = load_workbook(report, read_only=True)
     assert workbook.sheetnames == ["Resumo", "Incidentes", "KPIs por operadora"]
+
+
+def test_analysis_generates_statistics_recommendations_and_charts(tmp_path):
+    pipeline = run_pipeline(ROOT / "data" / "raw", tmp_path / "processed", DEFAULT_AS_OF)
+    artifacts = build_analysis(pipeline.incidents, tmp_path / "analysis")
+    providers = pd.read_csv(artifacts.provider_summary)
+    correlations = pd.read_csv(artifacts.correlation_summary)
+    report = artifacts.report.read_text(encoding="utf-8")
+
+    assert set(providers.columns) >= {"operator", "incident_count", "downtime_share_pct"}
+    assert len(correlations) == 2
+    assert "## Perguntas de negócio" in report
+    assert "## Recomendações" in report
+    assert "## Limitações" in report
+    assert artifacts.provider_chart.read_text(encoding="utf-8").startswith("<svg")
+    assert artifacts.monthly_chart.read_text(encoding="utf-8").startswith("<svg")

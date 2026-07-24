@@ -1,0 +1,7 @@
+month,incident_count,active_incidents,total_downtime_minutes,avg_duration_minutes
+2026-02,2,0,200,100.0
+2026-03,2,0,235,117.5
+2026-04,2,0,275,137.5
+2026-05,2,0,230,115.0
+2026-06,3,0,410,136.67
+2026-07,10,9,7056,705.6

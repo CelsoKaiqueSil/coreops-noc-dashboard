@@ -1,0 +1,11 @@
+metric,value,unit
+Incidentes,21.0,contagem
+Incidentes ativos,9.0,contagem
+Participação de ativos,42.86,%
+Duração média,400.29,minutos
+Duração mediana,145.0,minutos
+Percentil 75 da duração,300.0,minutos
+Percentil 90 da duração,1080.0,minutos
+Maior duração,3072.0,minutos
+Indisponibilidade acumulada,140.1,horas
+Severidade média,3.86,escala 0-5

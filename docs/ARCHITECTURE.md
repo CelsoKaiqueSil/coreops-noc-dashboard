@@ -16,6 +16,8 @@ flowchart LR
     H --> J["Dataset JavaScript gerado"]
     J --> K["Dashboard estática"]
     H --> L["Relatório Excel semanal"]
+    H --> M["Estudo exploratório"]
+    M --> N["Tabelas, gráficos e recomendações"]
 ```
 
 ## Decisões de engenharia
@@ -32,6 +34,9 @@ flowchart LR
   duplicidades removidas e método usado em cada match.
 - **Reprodutibilidade:** a data de referência é configurável para que testes e
   artefatos gerados sejam determinísticos.
+- **Análise orientada a negócio:** o mesmo artefato de incidentes alimenta
+  estatística descritiva, segmentações, tendência, correlações e recomendações,
+  com limitações documentadas.
 
 ## Fronteira entre demonstração e produção
 
@@ -42,8 +47,8 @@ flowchart LR
 | Scripts SQL versionados | PostgreSQL e views analíticas |
 | Arquivos JSON/JS | API consumida pela dashboard |
 | Relatório Excel de exemplo | Automação semanal de relatórios |
+| Markdown, CSVs e gráficos SVG | Estudo exploratório e comunicação de insights |
 | Testes unitários | Validações de qualidade e regressão |
 
 Credenciais, endereços de servidores, consultas internas, nomes reais e código de
 implantação permanecem deliberadamente fora do repositório.
-

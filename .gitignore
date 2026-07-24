@@ -4,6 +4,7 @@ Thumbs.db
 .vscode/
 .idea/
 .venv/
+*.egg-info/
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -19,6 +20,7 @@ tmp/
 *.csv
 !data/raw/*.csv
 !data/processed/*.csv
+!analysis/*.csv
 *.env
 *.env.*
 !.env.example

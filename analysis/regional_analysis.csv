@@ -1,0 +1,8 @@
+regional,incident_count,active_incidents,total_downtime_minutes,avg_duration_minutes,median_duration_minutes,p90_duration_minutes,avg_severity,downtime_share_pct
+Regional Sudeste D,3,1,3172,1057.33,55.0,2468.6,3.67,37.73
+Regional Nordeste,2,1,1716,858.0,858.0,1352.4,4.5,20.41
+Regional Centro-Oeste,4,2,1555,388.75,220.0,864.0,4.0,18.5
+Regional Sudeste C,3,1,795,265.0,300.0,312.0,4.0,9.46
+Regional Sul,3,1,510,170.0,120.0,264.0,3.33,6.07
+Regional Sudeste B,3,2,435,145.0,145.0,149.0,4.33,5.17
+Regional Sudeste A,3,1,223,74.33,78.0,79.6,3.33,2.65

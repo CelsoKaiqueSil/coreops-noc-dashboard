@@ -1,0 +1,5 @@
+operator,incident_count,active_incidents,total_downtime_minutes,avg_duration_minutes,median_duration_minutes,p90_duration_minutes,avg_severity,downtime_share_pct
+Orbitel,6,3,3792,632.0,142.5,1686.0,3.83,45.11
+Nexa Fiber,4,3,2066,516.5,255.0,1141.2,4.5,24.58
+AlphaLink,7,2,1613,230.43,78.0,540.0,3.57,19.19
+Vertex Telecom,4,1,935,233.75,270.0,310.5,3.75,11.12
