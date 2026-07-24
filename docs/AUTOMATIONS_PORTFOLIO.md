@@ -5,7 +5,7 @@ em contexto profissional. O objetivo é apresentar raciocínio de engenharia,
 qualidade de dados e impacto operacional sem expor clientes, infraestrutura,
 credenciais ou código proprietário.
 
-## 1. Pipeline de relatórios Zabbix
+## 1. [Pipeline de relatórios Zabbix](https://github.com/CelsoKaiqueSil/zabbix-reporting-pipeline)
 
 ### Problema
 
@@ -43,7 +43,7 @@ flowchart LR
     E --> F["Relatório Excel auditável"]
 ```
 
-## 2. Service Desk Analytics
+## 2. [Service Desk Analytics](https://github.com/CelsoKaiqueSil/service-desk-analytics)
 
 ### Problema
 
@@ -78,7 +78,7 @@ flowchart LR
     E --> F["Dashboard e relatório"]
 ```
 
-## 3. FortiView para Excel e SharePoint
+## 3. [FortiView para Excel e SharePoint](https://github.com/CelsoKaiqueSil/fortiview-excel-automation)
 
 ### Problema
 

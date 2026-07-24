@@ -45,11 +45,13 @@ de caso de automações que desenvolvi em contexto profissional:
 
 | Automação | Entrega | Competências demonstradas |
 |---|---|---|
-| **Pipeline de relatórios Zabbix** | Coleta somente leitura, processamento em lotes, análise de CPU, memória, tráfego e picos, com relatórios Excel auditáveis | APIs, Python, ETL, séries temporais e qualidade de dados |
-| **Service Desk Analytics** | Consolidação de chamados, backlog, SLA e tempos de atendimento, incluindo média, mediana e P90 | BI, indicadores, reconciliação e comunicação executiva |
-| **FortiView para Excel/SharePoint** | Coleta agendada de tráfego, backup e atualização padronizada de planilhas | Automação de processos, Excel, agendamento e integração |
+| [**Pipeline de relatórios Zabbix**](https://github.com/CelsoKaiqueSil/zabbix-reporting-pipeline) | Coleta somente leitura, processamento em lotes, análise de CPU, memória, tráfego e picos, com relatórios Excel auditáveis | APIs, Python, ETL, séries temporais e qualidade de dados |
+| [**Service Desk Analytics**](https://github.com/CelsoKaiqueSil/service-desk-analytics) | Consolidação de chamados, backlog, SLA e tempos de atendimento, incluindo média, mediana e P90 | BI, indicadores, reconciliação e comunicação executiva |
+| [**FortiView para Excel/SharePoint**](https://github.com/CelsoKaiqueSil/fortiview-excel-automation) | Coleta agendada de tráfego, backup e atualização padronizada de planilhas | Automação de processos, Excel, agendamento e integração |
 
-As arquiteturas, decisões e resultados estão documentados em
+Cada automação possui agora um repositório independente, com dados sintéticos,
+código executável, testes automatizados e integração contínua. As arquiteturas,
+decisões e resultados também estão reunidos em
 [Portfólio de automações](docs/AUTOMATIONS_PORTFOLIO.md). Por segurança e
 confidencialidade, o repositório não publica scripts de produção, credenciais,
 endereços internos ou dados de clientes.
