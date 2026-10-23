@@ -8,6 +8,14 @@ Thumbs.db
 __pycache__/
 *.py[cod]
 .pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+test-results.xml
+htmlcov/
+*.xlsx.lock
+.pbi/
+!docs/examples/*.xlsx
 node_modules/
 dist/
 coverage/

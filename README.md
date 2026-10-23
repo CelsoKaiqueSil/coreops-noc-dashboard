@@ -1,5 +1,22 @@
 # CoreOps NOC Dashboard
 
+[Baixar Excel sintetico de exemplo](docs/examples/coreops_weekly_demo.xlsx) · [Historico de mudancas](CHANGELOG.md)
+
+![Indicadores gerados pelo pipeline sintetico](docs/images/preview.png)
+
+**Problema:** transformar eventos de monitoramento em uma fila priorizavel e indicadores auditaveis.
+
+- 35 eventos de exemplo produzem 21 incidentes; ruido e duplicidade ficam registrados.
+- Interface local, Excel e estudo analitico partem do mesmo pipeline reproduzivel.
+- Nenhum dado operacional ou credencial e necessario para executar.
+
+[Demonstracao web](https://celsokaiquesil.github.io/coreops-noc-dashboard/) ·
+[Escopo publico versus privado](docs/DEMO_SCOPE.md) ·
+[Evidencias de resultado](docs/IMPACT_EVIDENCE.md) ·
+[Caso Central de Relatorios](docs/REPORT_CENTER_CASE_STUDY.md)
+
+A imagem acima e uma previa analitica gerada em Python, nao captura de producao.
+
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](pyproject.toml)
 [![Pandas](https://img.shields.io/badge/Pandas-ETL-150458?logo=pandas&logoColor=white)](src/coreops_demo/pipeline.py)
 [![Análise](https://img.shields.io/badge/análise-EDA%20%2B%20estatística-00796B)](analysis/operational_analysis.md)
@@ -78,6 +95,7 @@ documentados no [Dicionário de dados](docs/DATA_DICTIONARY.md).
 
 ```bash
 python -m venv .venv
+source .venv/bin/activate  # Linux/macOS
 python -m pip install -e ".[dev]"
 python -m coreops_demo.pipeline
 python -m coreops_demo.analysis
@@ -88,6 +106,15 @@ python -m http.server 8000
 
 Depois, abra `http://localhost:8000`. Os arquivos gerados ficam em
 `data/processed/` e o relatório de demonstração em `output/`.
+
+No Windows PowerShell, use `.\.venv\Scripts\Activate.ps1` em lugar de `source`.
+Sem ativar o ambiente, execute `.\.venv\Scripts\python.exe` em lugar de `python`
+e use `python -m pytest` para os testes. Nao altere politicas globais do sistema.
+
+Resultado esperado: `quality_summary.json` informa 35 entradas, 1 ruido e
+1 duplicidade; `output/coreops_weekly_demo.xlsx` tem Resumo, Incidentes e KPIs por
+operadora. `python scripts/validate_exports.py` confere os arquivos gerados.
+`python scripts/preview.py` regenera a imagem. As metas de SLA sao apenas didaticas.
 
 ## Camadas do repositório
 
