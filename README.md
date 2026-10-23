@@ -1,5 +1,7 @@
 # CoreOps NOC Dashboard
 
+![CoreOps NOC Dashboard: capa ilustrativa de dados e automação](docs/images/cover.png)
+
 [![CI](https://github.com/CelsoKaiqueSil/coreops-noc-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/CelsoKaiqueSil/coreops-noc-dashboard/actions/workflows/ci.yml)
 
 **Dos eventos técnicos à decisão operacional.** ETL em Python, indicadores
