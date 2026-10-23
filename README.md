@@ -1,45 +1,26 @@
 # CoreOps NOC Dashboard
 
-[Baixar Excel sintetico de exemplo](docs/examples/coreops_weekly_demo.xlsx) · [Historico de mudancas](CHANGELOG.md)
+![CoreOps NOC Dashboard: capa ilustrativa de dados e automação](docs/images/cover.png)
 
-![Indicadores gerados pelo pipeline sintetico](docs/images/preview.png)
+[![CI](https://github.com/CelsoKaiqueSil/coreops-noc-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/CelsoKaiqueSil/coreops-noc-dashboard/actions/workflows/ci.yml)
 
-**Problema:** transformar eventos de monitoramento em uma fila priorizavel e indicadores auditaveis.
+**Dos eventos técnicos à decisão operacional.** ETL em Python, indicadores
+auditáveis e uma dashboard para acompanhar disponibilidade e priorizar incidentes.
 
-- 35 eventos de exemplo produzem 21 incidentes; ruido e duplicidade ficam registrados.
-- Interface local, Excel e estudo analitico partem do mesmo pipeline reproduzivel.
-- Nenhum dado operacional ou credencial e necessario para executar.
+[Abrir dashboard](https://celsokaiquesil.github.io/coreops-noc-dashboard/) ·
+[Baixar Excel de exemplo](docs/examples/coreops_weekly_demo.xlsx) ·
+[Executar localmente](#executar-localmente) · [Estudo analítico](analysis/operational_analysis.md)
 
-[Demonstracao web](https://celsokaiquesil.github.io/coreops-noc-dashboard/) ·
-[Escopo publico versus privado](docs/DEMO_SCOPE.md) ·
-[Evidencias de resultado](docs/IMPACT_EVIDENCE.md) ·
-[Caso Central de Relatorios](docs/REPORT_CENTER_CASE_STUDY.md)
+## Resultado em uma leitura
 
-A imagem acima e uma previa analitica gerada em Python, nao captura de producao.
+![Indicadores calculados pelo pipeline sintético](docs/images/preview.png)
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](pyproject.toml)
-[![Pandas](https://img.shields.io/badge/Pandas-ETL-150458?logo=pandas&logoColor=white)](src/coreops_demo/pipeline.py)
-[![Análise](https://img.shields.io/badge/análise-EDA%20%2B%20estatística-00796B)](analysis/operational_analysis.md)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-modelo%20analítico-4169E1?logo=postgresql&logoColor=white)](sql/)
-[![Tests](https://img.shields.io/badge/testes-pytest-0A9EDC?logo=pytest&logoColor=white)](tests/)
-[![Data](https://img.shields.io/badge/dados-100%25%20sintéticos-14804A)](SECURITY.md)
+<sub>Prévia analítica gerada em Python com dados sintéticos. Não é captura de produção nem comprovação de impacto operacional real.</sub>
 
-Portfólio de Dados e Business Intelligence que transforma eventos técnicos de
-monitoramento em incidentes enriquecidos, indicadores operacionais e uma dashboard
-voltada à tomada de decisão em um NOC.
-
-O repositório não é apenas uma interface: o dataset exibido pela dashboard é gerado
-por um pipeline reproduzível em **Python e Pandas**, com normalização, filtro de
-ruído, deduplicação, matching em camadas, cálculo de KPIs e artefatos auditáveis.
-O projeto também inclui um **estudo exploratório orientado a negócio**, com
-estatística descritiva, comparações, tendências, correlações e recomendações.
-O portfólio documenta ainda três automações aplicadas ao trabalho: relatórios
-Zabbix, indicadores de Service Desk e atualização agendada de planilhas a partir
-do FortiView.
-
-> **Privacidade:** todos os nomes, circuitos, endereços IP, eventos, protocolos e
-> indicadores são fictícios. Não existem credenciais, consultas internas, planilhas
-> corporativas ou dados de produção neste repositório.
+[Regras e evidências](docs/IMPACT_EVIDENCE.md) ·
+[Escopo da demonstração](docs/DEMO_SCOPE.md) ·
+[Arquitetura](docs/ARCHITECTURE.md) ·
+[Caso Central de Relatórios](docs/REPORT_CENTER_CASE_STUDY.md)
 
 ## O que este projeto comprova
 
