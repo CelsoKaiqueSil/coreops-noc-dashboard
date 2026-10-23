@@ -14,7 +14,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8,<9", "pytest-cov>=5,<8", "ruff>=0.8,<1", "matplotlib>=3.8,<4"]
+dev = ["pytest>=8,<10", "pytest-cov>=5,<8", "ruff>=0.8,<1", "matplotlib>=3.8,<4"]
 
 [project.scripts]
 coreops-demo = "coreops_demo.pipeline:main"
